@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: guestbook-kcl
+  namespace: argocd
+  annotations: {}
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/cyberslot/kcl
+    path: config
+    plugin:
+      name: kcl-v1.0
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
