@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/cyberslot/kcl.git
     targetRevision: main
-    path: apps
+    path: gitops/apps
   destination:
     server: https://kubernetes.default.svc
   syncPolicy:
